@@ -17,7 +17,7 @@ const Register = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/users/register",
+        "https://bug-battle-backend.onrender.com/users/register",
         formData
       );
       console.log(response.data);

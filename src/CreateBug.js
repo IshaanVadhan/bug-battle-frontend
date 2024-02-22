@@ -22,7 +22,7 @@ const CreateBug = () => {
   const submitBug = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/bugs/create", {
+      const response = await axios.post("https://bug-battle-backend.onrender.com/bugs/create", {
         submittedBy: user._id,
         questionId: questionId,
         buggedCode: code,
@@ -39,7 +39,7 @@ const CreateBug = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/questions/get?questionId=${questionId}`
+          `https://bug-battle-backend.onrender.com/questions/get?questionId=${questionId}`
         );
         setCode(response.data.code);
         setLanguage(response?.data.language);
@@ -91,7 +91,7 @@ const CreateBug = () => {
     if (compileCount < 5) {
       const data = { code: code, lang: language };
       axios
-        .post("http://localhost:4000/compile", data)
+        .post("https://bug-battle-backend.onrender.com/compile", data)
         .then(function (response) {
           console.log("response: ", response);
           if (response?.data?.output || response?.data?.output === "") {

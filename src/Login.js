@@ -15,7 +15,7 @@ const Login = () => {
     const handleSubmit = async (event) =>{
         event.preventDefault();
         try{
-            const response = await axios.post('http://localhost:4000/users/login',formData);
+            const response = await axios.post('https://bug-battle-backend.onrender.com/users/login',formData);
             localStorage.setItem('user',JSON.stringify(response.data));
             navigate('/instructions');
         }catch(error){

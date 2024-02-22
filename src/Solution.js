@@ -32,7 +32,7 @@ const Solution = () => {
     try {
       console.log();
       const response = await axios.post(
-        "http://localhost:4000/solutions/create",
+        "https://bug-battle-backend.onrender.com/solutions/create",
         {
           submittedBy: userId,
           questionId: questionId,
@@ -87,7 +87,7 @@ const Solution = () => {
     if (compileCount < 5) {
       const data = { code: code, lang: language };
       axios
-        .post("http://localhost:4000/compile", data)
+        .post("https://bug-battle-backend.onrender.com/compile", data)
         .then(function (response) {
           console.log("response: ", response);
           if (response?.data?.output || response?.data?.output === "") {
@@ -115,7 +115,7 @@ const Solution = () => {
     const fetchData = async () => {
       try {
         //console.log(questionId+" "+userId)
-        const response = await axios.get("http://localhost:4000/bugs/get", {
+        const response = await axios.get("https://bug-battle-backend.onrender.com/bugs/get", {
           params: {
             questionId: questionId,
             submittedBy: userId,

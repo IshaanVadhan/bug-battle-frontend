@@ -16,7 +16,7 @@ const QuestionForm = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/questions/create",
+        "https://bug-battle-backend.onrender.com/questions/create",
         formData
       );
       console.log(response.data);
